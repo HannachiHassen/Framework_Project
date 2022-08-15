@@ -1,5 +1,7 @@
 package testCases;
 
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import pageObject.AccountPage;
@@ -23,11 +25,17 @@ public class LoginTest extends Base{
 		landingPage.loginOption().click();
 		
 		LoginPage loginPage=new LoginPage();
-		loginPage.email().sendKeys("arun.selenium@gmail.com");
-		loginPage.password().sendKeys("Second@123");
+		loginPage.email().sendKeys(prop.getProperty("email"));
+		loginPage.password().sendKeys(prop.getProperty("password"));
 		loginPage.clickLoginbtn().click();
 		
 		AccountPage account=new AccountPage();
+		Assert.assertTrue(account.editAccountInformation().isDisplayed());
 		account.editAccountInformation().click();
 	}	
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.close();
+	}
 }
