@@ -59,7 +59,11 @@ These instructions will get you a copy of the project up and running on your loc
 * Create an object for AccountPage from LoginTest and perform required operations 
 * Run the LoginTest to see, if this is executing so far.
 * Remove the email and password hardcoding and read them from the properties file
-* Write @AfterMethod to close the browser    
+* Write @AfterMethod to close the browser 
+
+## Parameterize the Test by passing multiple sets of data from DataProvider annotated method
+
+* Create a DataProvider annotated method and pass the data to the Test annotated method 
 
 ## Versioning
 
