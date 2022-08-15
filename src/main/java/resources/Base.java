@@ -3,7 +3,6 @@ package resources;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -15,21 +14,25 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
+	public static WebDriver driver=null;
+    public static Properties prop;
+	
 	public WebDriver intializeDriver() {
-		WebDriver driver=null;
-		Properties prop=new Properties();
-		String propPath=System.getProperty("user.dir"+"./resources/config.properties");
 		
 		try {
-			FileInputStream fis = new FileInputStream(propPath);
-			prop.load(fis);
+			 prop=new Properties();
+	         FileInputStream fis=new FileInputStream(System.getProperty("user.dir") + "./Config File/config.properties");
+	         prop.load(fis);
+	         System.out.println(prop.getProperty("url"));
+	         System.out.println(prop.getProperty("browser"));
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}catch (IOException io) {
 			io.printStackTrace();
 		}		
 		
-		String browserName=prop.getProperty("browseer");
+		String browserName=prop.getProperty("browser");
 		
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
