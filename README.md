@@ -65,6 +65,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Create a DataProvider annotated method and pass the data to the Test annotated method 
 
+## Create @BeforeMethod
+
+* Organize the code for opening the Application 
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 

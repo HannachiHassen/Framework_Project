@@ -2,6 +2,7 @@ package testCases;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -16,11 +17,14 @@ public class LoginTest extends Base{
 		super();
 	}
 	
-	@Test(priority=1)
-	public void login() {
-		
+	@BeforeMethod
+	public void setUp() {
 		intializeDriver();
 		driver.get(prop.getProperty("url"));
+	}
+	
+	@Test(priority=1)
+	public void login() {
 		
 		LandingPage landingPage = new LandingPage();
 		landingPage.myAccountDropDown().click();
@@ -38,10 +42,7 @@ public class LoginTest extends Base{
 	
 	@Test(priority = 2, dataProvider = "getLoginData")
 	public void loginDataProvider(String email, String password, String expectedRsult) {
-		
-		intializeDriver();
-		driver.get(prop.getProperty("url"));
-		
+				
 		LandingPage landingPage = new LandingPage();
 		landingPage.myAccountDropDown().click();
 		landingPage.loginOption().click();
