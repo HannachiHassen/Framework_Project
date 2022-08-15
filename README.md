@@ -69,6 +69,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Organize the code for opening the Application 
 
+## Create some dummy Test Classes with simple SOP statements
+
+* TestTwo 
+* TestThree
+* TestFour
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 
