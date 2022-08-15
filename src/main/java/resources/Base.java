@@ -1,5 +1,10 @@
 package resources;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -12,15 +17,27 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Base {
 	public WebDriver intializeDriver() {
 		WebDriver driver=null;
-		String browserName1 ="firefoxe";
+		Properties prop=new Properties();
+		String propPath=System.getProperty("user.dir"+"./resources/config.properties");
 		
-		if (browserName1.equalsIgnoreCase("chrome")) {
+		try {
+			FileInputStream fis = new FileInputStream(propPath);
+			prop.load(fis);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}catch (IOException io) {
+			io.printStackTrace();
+		}		
+		
+		String browserName=prop.getProperty("browseer");
+		
+		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
-		} else if (browserName1.equalsIgnoreCase("fireforx")) {
+		} else if (browserName.equalsIgnoreCase("fireforx")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();			
-		} else if(browserName1.equalsIgnoreCase("edge")){
+		} else if(browserName.equalsIgnoreCase("edge")){
 			WebDriverManager.edgedriver().setup();
 			driver=new EdgeDriver();
 		} 
