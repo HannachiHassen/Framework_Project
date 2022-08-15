@@ -75,6 +75,11 @@ These instructions will get you a copy of the project up and running on your loc
 * TestThree
 * TestFour
 
+## Convert the Project to TestNG
+
+* Right click on the Project, Select TestNG > Convert to TestNG
+* Execute the Tests as a group using testng.xml file
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 
