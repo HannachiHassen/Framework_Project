@@ -26,7 +26,7 @@ public class LoginPage extends Base{
 	}
 	
 	public WebElement password() {
-		return emailAddressField;
+		return passwordField;
 	}
 	
 	public WebElement clickLoginbtn() {
