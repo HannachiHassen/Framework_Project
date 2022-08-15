@@ -1,15 +1,24 @@
 package testCases;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import pageObject.LandingPage;
 import resources.Base;
 
 public class LoginTest extends Base{
 	
+	
+	public LoginTest() {
+		super();
+	}
+	
 	@Test
 	public void login() {		
-		WebDriver driver=intializeDriver();
-		driver.get(prop.getProperty("url"));		
+		intializeDriver();
+		driver.get(prop.getProperty("url"));
+		
+		LandingPage landingPage = new LandingPage();
+		landingPage.myAccountDropDown().click();
+		landingPage.loginOption().click();
 	}	
 }
