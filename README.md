@@ -101,6 +101,19 @@ These instructions will get you a copy of the project up and running on your loc
     - Add parallel=tests
 * Run the code and observe that all the tests will run in parallel
 
+## Taking screenshots for failing Tests
+
+* Create a listeners package under src/main/java
+* Create a Listeners class under it and make it implement ITestListener interface
+     - Add TestNG library if unable to resolve the errors
+* Select 'Source' menu in Eclipse IDE < Override/Implement Methods and select all the check boxes of ITestListerner
+* Create reusable method for taking screenshots in Base class with two parameters
+* Extend the Listeners class with Base class 
+* Update the onTestFailure() method of Listeners class
+* Add the Listeners tags in testng.xml file
+* Make the driver of the Test Classes to global and public
+* Intentionally fail a test and run the testng.xml file 
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 
