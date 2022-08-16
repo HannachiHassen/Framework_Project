@@ -93,7 +93,13 @@ These instructions will get you a copy of the project up and running on your loc
     - Add the tags under <build> tag
 * Run the code and observe that the logs will be printed in the logs file
 
+## Enable Parallel execution using TestNG
 
+* Adding sample automation code in all the Test Classes and Run them as a group to see whether they are running one after the other
+* Modify the testng.xml file as below:
+    - Separate individual classes to separate tags
+    - Add parallel=tests
+* Run the code and observe that all the tests will run in parallel
 
 ## Versioning
 
