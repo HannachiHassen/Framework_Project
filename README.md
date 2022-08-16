@@ -1,6 +1,6 @@
 ## Developing a Framework and Automating Live Project
 
-##Getting Started
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -84,6 +84,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Search for Maven TestNG configuration and add the plugin for Maven Surefire plugin having configuration tags 
 * Run from the command prompt - mvn test
+
+## Configuring log4j for logs
+* Copy paste the log4j2.xml file here into the Config File Folder 
+* Open the LoginTest and write the logs
+* Add the tags to pom.xml file to specify where exactly log4j file is available in the project
+    - Search for 'Maven filtering' in google 
+    - Add the tags under <build> tag
+* Run the code and observe that the logs will be printed in the logs file
+
+
 
 ## Versioning
 

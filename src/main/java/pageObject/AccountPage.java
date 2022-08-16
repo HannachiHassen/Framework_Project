@@ -15,7 +15,7 @@ public class AccountPage extends Base{
 	@FindBy(xpath = "//a[contains(text(),'Edit your account information')]")
 	WebElement editAccountLink;
 	
-	public WebElement editAccountInformation() {
+	public WebElement editYourAccountInformation() {
 		return editAccountLink;		
 	}
 }

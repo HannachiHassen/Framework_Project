@@ -21,15 +21,15 @@ public class LoginPage extends Base{
 	@FindBy(xpath = "//input[@type='submit']")
 	WebElement loginBtn;
 	
-	public WebElement email() {
+	public WebElement emailAddressTextField() {
 		return emailAddressField;
 	}
 	
-	public WebElement password() {
+	public WebElement passwordField() {
 		return passwordField;
 	}
 	
-	public WebElement clickLoginbtn() {
+	public WebElement loginButton() {
 		return loginBtn;
 	}
 
