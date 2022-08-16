@@ -114,6 +114,15 @@ These instructions will get you a copy of the project up and running on your loc
 * Make the driver of the Test Classes to global and public
 * Intentionally fail a test and run the testng.xml file 
 
+## Integrating ExtentReports to the framework
+
+* Create a package say 'utilities' under 'src/main/java'
+* Create a class under this package say 'ExtentReporter' 
+* Create a method say 'getExtentReport' with this code - View here
+* Make the getExtentReport method static 
+* Write extent report code into different Listeners methods ( onTestStart, onTestSuccess, onTestFailure and onFinish) - View here
+* Remove parallel execution from testng.xml file and Run
+    
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 
