@@ -22,7 +22,6 @@ public class ThreeTest extends Base{
 		System.out.println("TestThree");
 		
 		Thread.sleep(2000);
-		Assert.assertTrue(false);
 	}
 	
 	@AfterMethod

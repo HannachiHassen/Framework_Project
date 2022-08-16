@@ -24,7 +24,6 @@ public WebDriver driver;
 		driver.navigate().to(prop.getProperty("url"));
 		
 		Thread.sleep(2000);
-		Assert.assertTrue(false);
 	}
 	
 	@AfterMethod

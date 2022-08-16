@@ -118,11 +118,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Create a package say 'utilities' under 'src/main/java'
 * Create a class under this package say 'ExtentReporter' 
-* Create a method say 'getExtentReport' with this code - View here
+* Create a method say 'getExtentReport'
 * Make the getExtentReport method static 
-* Write extent report code into different Listeners methods ( onTestStart, onTestSuccess, onTestFailure and onFinish) - View here
-* Remove parallel execution from testng.xml file and Run
-    
+* Write extent report code into different Listeners methods ( onTestStart, onTestSuccess, onTestFailure and onFinish)
+* Remove parallel execution from testng.xml file and Run  
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 
