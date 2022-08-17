@@ -29,7 +29,7 @@ public class Login extends Base {
 	public void navigate_to_login_page() throws InterruptedException {
 		
 		driver.get(prop.getProperty("url"));
-		LandingPage landingPage = new LandingPage();
+		landingPage = new LandingPage();
 		landingPage.myAccountDropDown().click();		
 		landingPage.loginOption().click();
 		Thread.sleep(3000);
@@ -38,7 +38,7 @@ public class Login extends Base {
 	@When("^User enters username as \"([^\"]*)\" and password as \"([^\"]*)\" into the fields$")
 	public void user_enters_username_as_something_and_password_as_something_into_the_fields(String email, String password) {
 		
-		LoginPage loginPage=new LoginPage();
+		loginPage=new LoginPage();
 		loginPage.emailAddressTextField().sendKeys(prop.getProperty("email"));
 		loginPage.passwordField().sendKeys(prop.getProperty("password"));
 	}
@@ -50,12 +50,12 @@ public class Login extends Base {
 
 	@Then("^Verify user is able to successfully login$")
 	public void verify_user_is_able_to_successfully_login() {
-		AccountPage account=new AccountPage();
+		account=new AccountPage();
 		Assert.assertTrue(account.editYourAccountInformation().isDisplayed());
 		account.editYourAccountInformation().click();	
 	}
 	
-	@After("^Close Browser$")
+	@After
 	public void closeBrowser() {
 		driver.close();		
 	}

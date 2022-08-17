@@ -158,6 +158,8 @@ These instructions will get you a copy of the project up and running on your loc
 * Create a runner package 
 * Create a Runner class under it
     - Extend AbstractTestNGCucumberTests
+* Generate a testng2.xml file and modify it
+* Run the testng2.xml file
 
 ## Versioning
 
