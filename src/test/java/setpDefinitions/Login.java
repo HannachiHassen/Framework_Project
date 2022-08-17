@@ -55,7 +55,7 @@ public class Login extends Base {
 		account.editYourAccountInformation().click();	
 	}
 	
-	@After()
+	@After("^Close Browser$")
 	public void closeBrowser() {
 		driver.close();		
 	}

@@ -155,6 +155,9 @@ These instructions will get you a copy of the project up and running on your loc
 * Create a Class 'Login.java' under this package
 * Auto-generate the Step definitions using TinyGerkhin Chrome Plugin
 * Move the automation code to respective step definitions methods
+* Create a runner package 
+* Create a Runner class under it
+    - Extend AbstractTestNGCucumberTests
 
 ## Versioning
 
