@@ -153,6 +153,8 @@ These instructions will get you a copy of the project up and running on your loc
 * Create a feature file  'Login.feature' under this package
 * Create a package 'stepDefinitions' under 'src/test/java'
 * Create a Class 'Login.java' under this package
+* Auto-generate the Step definitions using TinyGerkhin Chrome Plugin
+* Move the automation code to respective step definitions methods
 
 ## Versioning
 
