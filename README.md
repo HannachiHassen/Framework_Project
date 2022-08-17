@@ -124,7 +124,6 @@ These instructions will get you a copy of the project up and running on your loc
 * Remove parallel execution from testng.xml file and Run  
 
 * Make ExtentReports thread-safe, by adding this code to Listeners class
-
     - Add parallel execution to testng.xml file
     - Add this line to the Listeners class
           - ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<ExtentTest>();
