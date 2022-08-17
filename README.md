@@ -160,6 +160,7 @@ These instructions will get you a copy of the project up and running on your loc
     - Extend AbstractTestNGCucumberTests
 * Generate a testng2.xml file and modify it
 * Run the testng2.xml file
+* Mention this testng2.xml file in maven surefire plugin of pom.xml and run using the Maven command (mvn test)
 
 ## Versioning
 
