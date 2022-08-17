@@ -143,6 +143,17 @@ These instructions will get you a copy of the project up and running on your loc
 ## Applying Encapsulation in the framework
 * Make all the Page Objects as private
 
+## Integrating Cucumber BDD into this Framework
+
+* Add the dependencies for Cucumber
+     - Cucumber-Java 
+     - Cucumber-testng
+* Verify whether the Cucumber Eclipse IDE plugin is installed
+* Create a package 'features' under 'src/test/java'
+* Create a feature file  'Login.feature' under this package
+* Create a package 'stepDefinitions' under 'src/test/java'
+* Create a Class 'Login.java' under this package
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 
