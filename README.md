@@ -123,6 +123,25 @@ These instructions will get you a copy of the project up and running on your loc
 * Write extent report code into different Listeners methods ( onTestStart, onTestSuccess, onTestFailure and onFinish)
 * Remove parallel execution from testng.xml file and Run  
 
+* Make ExtentReports thread-safe, by adding this code to Listeners class
+
+    - Add parallel execution to testng.xml file
+    - Add this line to the Listeners class
+          - ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<ExtentTest>();
+    - Add this line inside onTestStart 
+           - extentTestThread.set(extentTest);
+    - Replace existing line with this line inside onTestSuccess
+           - extentTestThread.get().log(Status.PASS,"Test Passed");
+    - Replace existing line with this link inside onTestFailure
+           - extentTestThread.get().fail(result.getThrowable());
+* Adding the screenshot to the ExtentReports
+     - Make the takeScreenshot() method return the destination file path
+     - Update the onTestFailure method
+        - String screenshotFilePath = takeScreenshot(testMethodName,driver);
+        - extentTestThread.get().addScreenCaptureFromPath(screenshotFilePath, testMethodName);
+
+* Run the testng.xml file
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/HannachiHassen/project/tags). 

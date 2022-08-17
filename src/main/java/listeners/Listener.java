@@ -20,25 +20,30 @@ public class Listener extends Base implements ITestListener {
 	
 	ExtentReports extentReport= ExtentReporter.getExtentReport();
 	ExtentTest extentTest;
+	ThreadLocal<ExtentTest> extentTestThread=new ThreadLocal<ExtentTest>();
+	
 	
 	@Override
 	public void onTestStart(ITestResult result) {
 		String testName=result.getName();
+		
 		extentTest=extentReport.createTest(testName+ " Execution started");
+		extentTestThread.set(extentTest);		
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		String testName=result.getName();
-		extentTest.log(Status.PASS, testName+ " Test get Passed");		
+		//extentTest.log(Status.PASS, testName+ " Test get Passed");	
+		extentTestThread.get().log(Status.PASS, testName+ " Test get Passed");	
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		String testMethodName = result.getName();
 		
-		extentTest.fail(result.getThrowable());
-		
+		//extentTest.fail(result.getThrowable());
+		extentTestThread.get().fail(result.getThrowable());
 		try {
 			driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
 		    /* We can replace the above code with a short one: 
@@ -48,7 +53,8 @@ public class Listener extends Base implements ITestListener {
 			e.printStackTrace();
 		}
 		try {
-			takeScreenshot(testMethodName, driver);
+			String screenshotPath=takeScreenshot(testMethodName, driver);
+			extentTestThread.get().addScreenCaptureFromPath(screenshotPath, testMethodName);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -56,7 +62,8 @@ public class Listener extends Base implements ITestListener {
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		extentTest.log(Status.SKIP, " Test skipped");
+		//extentTest.log(Status.SKIP, " Test skipped");
+		extentTestThread.get().log(Status.SKIP, " Test skipped");
 	}
 
 	@Override
