@@ -13,10 +13,10 @@ public class LandingPage extends Base{
 	}
 	
 	@FindBy(xpath = "//span[contains(text(),'My Account')]")
-	WebElement myAccountDropDown;
+	private WebElement myAccountDropDown;
 	
 	@FindBy(xpath = "//a[contains(text(),'Login')]")
-	WebElement loginOption;
+	private WebElement loginOption;
 	
 	public WebElement myAccountDropDown() {
 		return myAccountDropDown;		
