@@ -25,9 +25,9 @@ public class Listener extends Base implements ITestListener {
 	
 	@Override
 	public void onTestStart(ITestResult result) {
-		String testName=result.getName();
-		
+		String testName=result.getName();		
 		extentTest=extentReport.createTest(testName+ " Execution started");
+		
 		extentTestThread.set(extentTest);		
 	}
 
@@ -78,12 +78,15 @@ public class Listener extends Base implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-	
+		String testName=context.getName();		
+		extentTest=extentReport.createTest("On Start Test Method" +testName);	
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
+		String testName=context.getName();		
+		extentTest=extentReport.createTest("On Start Test Method" +testName);	
 		extentReport.flush();
+		System.out.println(("Extent Reports Version 5  Test Suite is ending!"));
 	}
-
 }
