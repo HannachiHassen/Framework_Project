@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import constants.FrameworkConstant;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
@@ -25,7 +26,7 @@ public class Base {
 		
 		try {
 			 prop=new Properties();
-	         FileInputStream fis=new FileInputStream(System.getProperty("user.dir") + "./Config File/config.properties");
+	         FileInputStream fis=new FileInputStream(FrameworkConstant.getCONFIGFILEPATH());
 	         prop.load(fis);
 	         System.out.println(prop.getProperty("url"));
 	         System.out.println(prop.getProperty("browser"));
@@ -51,7 +52,7 @@ public class Base {
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(FrameworkConstant.getIMPLICITLYWAIT(), TimeUnit.SECONDS);
 		
 		return driver;
 	}
