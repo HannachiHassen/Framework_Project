@@ -1,8 +1,8 @@
 package constants;
 
-public class FrameworkConstant {
+public final class FrameworkConstants {
 
-	private FrameworkConstant() {
+	private FrameworkConstants() {
 	}
 
 	private static final String CONFIGFILEPATH= System.getProperty("user.dir") + "./Config File/config.properties";
